@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    transition: all .2s linear;
+  }
+  
+  body {
+    background-color: #FFFFF0;
+  }
+  
+  .logo {
+    display: flex;
+    margin-left: 6rem;
+    color: #013F6A;
+    object-fit: cover;
+  }
+  
+  .logo img {
+    height: 10vh;
+    width: 14rem;
+    object-fit: cover;
+    /* margin-top: .4rem; */
+    margin-bottom: 0.5rem;
+  
+  }
+  .nav ul{
+    margin-left: 43%;
+  }
+
+  .nav {
+    display: flex;
+    background-color: #E9F1FA;
+    position: relative;
+    align-items: center;
+    height: 11vh;
+  }
+  
+  .nav ul i {
+    color: #013F6A;
+  }
+  
+  .nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  ul li {
+    padding: .7rem;
+  }
+  
+  li {
+    text-decoration: none;
+  }
+  
+  li a {
+    text-decoration: none;
+    color: #013F6A;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    margin-right: 2rem;
+  }
+  
+  
+  .dropdown-btn {
+    background-color: #013F6A;
+    color: white;
+    height: 2.8rem;
+    width: 6rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.3rem;
+  }
+  
+  .dropdown-btn a {
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 0.8rem;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #E9F1FA;
+    width: 14vw;
+  
+    box-shadow: 0rem 0.5rem 1rem 0rem rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  
+  
+.small-container{
+  margin: 4rem;
+  
+}
+
+/* Cart.css --> */
+
+/* General Container Styles */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styles */
+h1 {
+  text-align: center;
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Cart Items List Styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Individual Cart Item Styles */
+#cartli {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Styles */
+li img {
+  border-radius: 10px;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
+}
+
+li img:hover {
+  transform: scale(1.1);
+}
+
+/* Product Details Container Styles */
+.product-details {
+  flex-grow: 1;
+}
+
+/* Product Name Styles */
+li h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #444;
+}
+
+/* Product Price and Quantity Styles */
+li p {
+  margin: 5px 0;
+  font-size: 1em;
+  color: #666;
+}
+
+/* Remove Item Button Styles */
+.remove-form {
+  margin-left: 20px;
+}
+
+.remove-button {
+  padding: 10px 15px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #c0392b;
+}
+
+/* Empty Cart Message Styles */
+p {
+  text-align: center;
+  font-size: 1.2em;
+  color: #888;
+  margin-top: 50px;
+}

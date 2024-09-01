@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button with Dropdown</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .filter-panel {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .filter-panel h3 {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Product Filters</h1>
+    <div class="filter-panel">
+      <h3>Price</h3>
+      <input type="range" min="0" max="1000" value="0" id="price-filter">
+      <span id="price-range">$<span id="price-min">0</span> - $<span id="price-max">1000</span></span>
+
+      <h3>Color</h3>
+      <ul class="color-filters">
+        <li><label for="color-red"><input type="checkbox" id="color-red" value="red"> Red</label></li>
+        <li><label for="color-green"><input type="checkbox" id="color-green" value="green"> Green</label></li>
+        <li><label for="color-blue"><input type="checkbox" id="color-blue" value="blue"> Blue</label></li>
+        <li><label for="color-all"><input type="checkbox" id="color-all" value="all"> All Colors</label></li>
+      </ul>
+
+      <h3>Brand</h3>
+      <select id="brand-filter">
+        <option value="all">All Brands</option>
+        <option value="brand1">Brand 1</option>
+        <option value="brand2">Brand 2</option>
+        <option value="brand3">Brand 3</option>
+      </select>
+
+      <h3>Customer Rating</h3>
+      <ul class="rating-filters">
+        <li><label for="rating-4-plus"><input type="checkbox" id="rating-4-plus" value="4+"> 4 Stars & Up</label></li>
+        <li><label for="rating-3-plus"><input type="checkbox" id="rating-3-plus" value="3+"> 3 Stars & Up</label></li>
+        <li><label for="rating-2-plus"><input type="checkbox" id="rating-2-plus" value="2+"> 2 Stars & Up</label></li>
+        <li><label for="rating-all"><input type="checkbox" id="rating-all" value="all"> All Ratings</label></li>
+      </ul>
+
+      <h3>Discount</h3>
+      <ul class="discount-filters">
+        <li><label for="discount-10-plus"><input type="checkbox" id="discount-10-plus" value="10+"> 10% Off or
+            More</label></li>
+        <li><label for="discount-5-plus"><input type="checkbox" id="discount-5-plus" value="5+"> 5% Off or More</label>
+        </li>
+        <li><label for="discount-all"><input type="checkbox" id="discount-all" value="all"> No Discount
+            Preference</label></li>
+      </ul>
+
+      <button id="filter-button">Apply Filters</button>
+    </div>
+
+    <div class="product-list">
+    </div>
+  </div>
+
+</body>
+
+
+
+<script>
+  const priceFilter = document.getElementById('price-filter');
+  const priceRangeSpan = document.getElementById('price-range');
+  const priceMinSpan = document.getElementById('price-min');
+  const priceMaxSpan = document.getElementById('price-max');
+  const filterButton = document.getElementById('filter-button');
+
+  // Function to update price range display
+  function updatePriceRangeDisplay() {
+    const currentPrice = priceFilter.value;
+    priceMinSpan.textContent = currentPrice;
+    priceMaxSpan.textContent = 1000; // Assuming maximum price is 1000, adjust as needed
+  }
+
+  // Event listener for price filter changes
+  priceFilter.addEventListener('input', () => {
+    updatePriceRangeDisplay();
+  });
+
+  // Function to filter products (replace with your actual product data logic)
+  function filterProducts() {
+    // Implement your logic here to filter products based on selected filters (price, color, brand, rating, discount)
+    // You'll need access to your product data and DOM manipulation techniques to update the product list
+    console.log('Filtering products...'); // Placeholder for now
+  }
+
+  // Event listener for filter button click
+  filterButton.addEventListener('click', () => {
+    filterProducts();
+  });
+
+  // Responsive behavior for filter panel on smaller screens (up to 768px wide)
+  const mediaQueryList = window.matchMedia('(max-width: 768px)');
+
+  const handleResize = () => {
+    const filterPanel = document.querySelector('.filter-panel');
+    if (mediaQueryList.matches) {
+      // Collapse filter panel on smaller screens
+      filterPanel.classList.add('collapsed');
+    } else {
+      // Expand filter panel on larger screens
+      filterPanel.classList.remove('collapsed');
+    }
+  };
+
+  mediaQueryList.addEventListener('change', handleResize);
+  handleResize(); // Call initially to handle initial screen size
+</script>
+
+</html>

@@ -1,0 +1,146 @@
+<html>
+
+<head>
+    <link href="/styles/onsearch.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/299785c8fd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="upper-section">
+        <div class="nav">
+            <div class="logo">
+               <a href="/"><img src="/images/logo1.jpg" alt="logo" srcset="" class="logo2"></a> 
+            </div>
+
+        <!-- Search box -->
+            <form action="/search" method="POST" class="search-box">
+                <input id="search" type="text" name="query" placeholder="...search products"  value="<%= query %>">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <!-- <span><i class="fa-solid fa-magnifying-glass"></i></span> -->
+            </form>
+            <ul>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <li><a href="/">Cart</a></li>
+                <i class="fa-solid fa-shop"></i>
+                <li><a href="/add-products">Become a Seller</a></li>
+            </ul>
+            <!-- Dropdowm Content -->
+            <div class="dropdown">
+                <button class="dropdown-btn"><a href="/login-signup">Login </a> <i class="fa-solid fa-caret-down"></i></button>
+                <span></span>
+                <div class="dropdown-content">
+                <div class="sign-in">
+                    <p>New User!</p> <button> <a href="#">Sign-in</a></button>
+                </div>
+                <hr>
+                <a href="#"><i class="fa-regular fa-user"></i>Account</a>
+                <a href="#"><i class="fa-solid fa-heart"></i>Wishlist</a>
+            </div>
+      </div>
+        </div>
+        <section id="Category">
+            <ul>
+                <li><a href="/Mens">Mens</a></li>
+                <li><a href="/Womens">Womens</a></li>
+                <li><a href="/kids">Kids</a></li>
+                <li><a href="/Bags_Footwear">Bags&Footwear</a></li>
+                <li><a href="/Grocery">Grocerry</a></li>
+                <li><a href="/Electronics">Electronics</a></li>
+                <li><a href="/Jwellery">Jewellery & Accessories</a></li>
+                <li><a href="/Beauty">Beauty & Health</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Filter Box -->
+    <div class="body-content">
+        <form class="filter-panel" action="/filters" method="POST">
+            <h3>Price</h3>
+            <input type="text" id="rg" name="range">
+            <input type="range" min="0" max="1000" value="0" id="price-filter" onchange="ranges()">
+            <span id="price-range"><span id="price-min">0</span> - <span id="price-max">1000</span>&#8377;</span>
+            <h3>Color</h3>
+            <ul class="color-filters">
+                <li><label for="color-red"><input type="checkbox" id="color-red" value="red" name="clr"> Red</label></li>
+                <li><label for="color-green"><input type="checkbox" id="color-green" value="green" name="clr"> Green</label></li>
+                <li><label for="color-blue"><input type="checkbox" id="color-blue" value="blue" name="clr"> Blue</label></li>
+                <li><label for="color-all"><input type="checkbox" id="color-all" value="all" name="clr"> All Colors</label></li>
+            </ul>
+
+            <h3>Brand</h3>
+            <select id="brand-filter" name="brand">
+                <option value="all">All Brands</option>
+                <option value="adidas">Adidas</option>
+                <option value="puma">Puma</option>
+                <option value="jockey">Jockey</option>
+            </select>
+
+            <h3>Customer Rating</h3>
+            <ul class="rating-filters">
+                <li><label for="rating-4-plus"><input type="checkbox" id="rating-4-plus" value="4+" name="rating">
+                        &#11088;&#11088;&#11088;&#11088;</label>
+                </li>
+                <li><label for="rating-3-plus"><input type="checkbox" id="rating-3-plus" value="3+" name="rating">
+                        &#11088;&#11088;&#11088; </label>
+                </li>
+                <li><label for="rating-2-plus"><input type="checkbox" id="rating-2-plus" value="2+" name="rating"> &#11088;&#11088;
+                    </label>
+                </li>
+            </ul>
+
+            <h3>Discount</h3>
+            <ul class="discount-filters">
+                <li><label for="discount-10-plus"><input type="checkbox" id="discount-10-plus" value="10+" name="disc"> 10% Off or
+                        More</label></li>
+                <li><label for="discount-5-plus"><input type="checkbox" id="discount-5-plus" value="5+" name="disc"> 5% Off or
+                        More</label></li>
+                <li><label for="discount-all"><input type="checkbox" id="discount-all" value="all" name="disc"> No Discount
+                        Preference</label></li>
+            </ul>
+            <input type="hidden" name="originalQuery" id="og"  value="<%= query %>">
+            <button id="filter-button" type="submit" onclick="setQuery()">Apply Filters</button>
+        </form>
+        <!-- products from diffrent diffrent websites -->
+
+        <div class="product-list">
+            <div class="products">
+                <% products.forEach(product=> { %>
+                    <div class="product">
+                        <img src="<%= product.image %>">
+
+                        <div class="product-info">
+                            <h2 id="info">
+                                <%= product.name %>
+                            </h2>
+                            <div class="detail">
+                                <p>
+                                    <%= product.price%>
+                                </p>
+                                <p><strong>Platform:</strong>
+                                    <%= product.platform %>
+                                </p>
+                            </div>
+                            <a href="<%= product.url %>" target="_blank">View Product</a>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let range = document.getElementById("price-filter");
+        let rg = document.getElementById("rg");
+        function ranges() {
+            console.log("test");
+            rg.value = range.value;
+        }
+        let search = document.getElementById('search');
+        let og = document.getElementById('og');
+        function setQuery(){
+            og.value = search.value;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+# Ignore all log files
+*.log
+
+node_modules/
+
+# Ignore environment files
+.env
+
+# Ignore specific folders
+/public/uploads/
+/build/
+.vscode
+# Ignore a specific file
+secrets.txt
+
+*.json

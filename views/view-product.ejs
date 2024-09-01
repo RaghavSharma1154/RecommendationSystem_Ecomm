@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Product</title>
+    <script src="https://kit.fontawesome.com/299785c8fd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/view_product.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="product-details">
+            <form action="/add-to-cart/<%= product._id %>" method="POST">
+                <h2 id="p_name">
+                    <%= product.name %>
+                </h2>
+                <div class="product-images">
+                    <img src="<%= product.url %>" alt="<%= product.name %>">
+                </div>
+                <div id="left">
+                    <div id="desc">
+                        <%= product.description %>
+                    </div>
+                    <p>Price: &#8377;
+                        <%= product.price %>
+                    </p>
+                    <p>Organization:
+                        <%= product.proorg %>
+                    </p>
+                    <p>country:
+                        <%= product.Country %>
+                    </p>
+                    <p>Owner Information:
+                        <%= product.ownerinfo %>
+                    </p>
+                    <p>Contact:
+                        <%= product.mobilenum %>
+                    </p>
+                </div>
+                <div id="links">
+                    <input type="hidden" name="productUrl" value="<%= product.url %>">
+                    <input type="hidden" name="productPrice" value="<%= product.price %>">
+                    <input type="hidden" name="productId" value="<%= product._id %>">
+                    <input type="hidden" name="productName" value="<%= product.name %>">
+                    <button class="btn" type="submit">ADD TO CART</button>
+                    <a href="/buy-product/<%= product._id %>" class="btn">PURCHASE NOW</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="footerCtn">
+            <div class="socialicon">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-google"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">Our Team</a></li>
+                    <li><a href="">Term and Policy</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footerBottom">
+            <p>Copyright &copy; 2024; </p>
+        </div>
+
+    </footer>
+</body>
+
+</html>

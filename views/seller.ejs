@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/299785c8fd.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/styles/seller.css">
+</head>
+
+<body>
+  <div class="nav">
+    <div class="logo">
+      <a href="/"><img src="/images/logo1.jpg" alt="logo" srcset="" class="logo2"></a>
+    </div>
+
+    <ul>
+      <!-- Cart -->
+      <i class="fa-solid fa-cart-shopping"></i>
+      <li><a href="/cart">Cart</a></li>
+      <i class="fa-solid fa-heart"></i>
+      <li><a href="">Wishlist</a></li>
+    </ul>
+
+    <div class="dropdown">
+      <button class="dropdown-btn"><a href="/login-signup">Login </a> <i class="fa-solid fa-caret-down"></i></button>
+      <div class="sign-in">
+        <button> <a href="/login-signup">Sign-up</a></button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- disciption div -->
+  <div class="dis">
+    <div class="text">
+      <h1>Grow Your Business Exponentially</h1>
+      <p>Sell on SnapPick's Omnichannel Platform where an item Sells Every 25 Seconds<br>
+        <br>
+        Expand Your Customer Base to over 18,000- Pin Codes Using SnapPick's Logistics Network
+      </p>
+    </div>
+    <div class="image">
+      <img src="/images/seller.png" alt="" srcset="">
+    </div>
+  </div>
+  <h1 id="head">Become a Seller on <br>SnapPick</h1>
+
+  <!-- REGISTRATION FORM -->
+  <form class="registration" action="" method="POST">
+    <div class="main-div">
+      <div class="c1">
+        <div class="titles">
+          <div class="tit">
+            <label class="title-label">Title</label>
+            <input type="text" name="title" placeholder="Short Sleeve T-shirt" id="tit">
+          </div>
+          <label class="title-descrip">Description</label>
+          <textarea name="description" id=""></textarea>
+        </div>
+        <div class="medias">
+          <label>Media</label>
+          <div class="container">
+            <input type="url" name="url" placeholder="Enter Your Image url">
+          </div>
+        </div>
+        <div class="pricing">
+          <h3>Pricing</h3>
+          <span id="price">Price</span>
+          <input type="text" name="price" placeholder="&#8377; 0.00" id="price">
+          <div class="price">
+            <div class="cost-div"><span id="cost-label">Cost per item</span>
+              <input class="inp" type="text" name="price" placeholder="&#8377; 0.00">
+            </div>
+            <div class="profit-div"><span id="profit-label">Profit</span>
+              <input class="inp" type="text" name="price" placeholder="---">
+            </div>
+            <div class="margin-div"><span id="margin-label">Margin</span>
+              <input class="inp" type="text" name="price" placeholder="---">
+            </div>
+          </div>
+        </div>
+        <div class="pro-organi">
+          <h3>Product organization</h3>
+          <span>Category</span>
+          <select id="po" name="po">
+            <option value="cat 1"></option>
+            <option value="Electronics">Electronics</option>
+            <option value="Furnitures">Furnitures</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Handbag & wallet Accessories
+            ">Handbag & wallet Accessories</option>
+            <option value="Jewelry">Jewelry</option>
+            <option value="Shoes">Shoes</option>
+            <option value="Home & garden">Home & garden</option>
+            <option value="Health & Beauty">Health & Beauty</option>
+            <option value="Hardware">Hardware</option>
+            <option value="Media">Media</option>
+            <option value="Food, Beverages & Tobacco">Food, Beverages & Tobacco</option>
+            <option value="Baby & Toddler">Baby & Toddler</option>
+            <option value="Toys & Games">Toys & Games</option>
+            <option value="Cameras & Optics">Cameras & Optics</option>
+          </select>
+          <div class="quantity">
+            <h3>Product Quantity</h3>
+            <input type="number" name="quantity" placeholder="No. of products">
+          </div>
+
+          <div class="Region">
+            <h3>Country/Region of origin</h3>
+            <select id="Country" name="Country">
+              <option value="select">Select</option>
+              <option value="India">India</option>
+              <option value="Australia">Australia</option>
+              <option value="China">China</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Nepal">Nepal</option>
+              <option value="Italy">Italy</option>
+            </select>
+          </div>
+        </div>
+        <div class="owner-datails">
+          <h3>Owner's Deatails</h3>
+          <span>Contact Number</span>
+          <input type="number" name="mobile" min="10">
+          <p>About owner and shop </p>
+          <textarea name="ownerinfo" placeholder="sdfghj">
+
+          </textarea>
+        </div>
+        <div class="buttons">
+          <button id="Add" type="submit">Add Product</button>
+          <button id="discard">Discard</button>
+        </div>
+      </div>
+      <div class="c2">
+        <img src="/images/pic.jpg" alt="" width="600" height="950">
+      </div>
+    </div>
+  </form>
+  <div class="working">
+    <img src="/images/working.jpg" alt="" width="1200" height="150">
+  </div>
+
+
+  <footer>
+    <div class="footerCtn">
+      <div class="socialicon">
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-google"></i></a>
+        <a href=""><i class="fa-brands fa-twitter"></i></a>
+      </div>
+
+
+
+
+
+      <div class="footerNav">
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact Us</a></li>
+          <li><a href="">Our Team</a></li>
+          <li><a href="">Term and Policy</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footerBottom">
+      <p>Copyright &copy; 2024; </p>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

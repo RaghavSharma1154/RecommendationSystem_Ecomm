@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/styles/profile.css">
+    <script src="https://kit.fontawesome.com/299785c8fd.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+        <a href="/"><img src="/images/logo1.jpg" alt="logo" srcset="" class="logo2"></a>
+        </div>
+
+        <!-- <form action="/search" method="POST" class="search-box">
+            <input type="text" name="query" placeholder="Search products...">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form> -->
+        <ul>
+            <!-- Cart -->
+            <i class="fa-solid fa-cart-shopping"></i>
+            <li><a href="/cart">Cart</a></li>
+            <i class="fa-solid fa-shop"></i>
+
+            <!-- Become a seller -->
+            <li><a href="/add-products">Become a Seller</a></li>
+        
+
+        <!-- Dropdowm Content -->
+        <div class="dropdown">
+            <li><button class="dropdown-btn"><a href="/login-signup">Login</a> </li>
+                    
+           
+            <!-- <div class="dropdown-content">
+                <div class="sign-in">
+                    <p>Already Logged In</p> <button><a href="/logout">LogOut</a></button>
+                </div>
+                <hr>
+                <a href="/account"><i class="fa-regular fa-user"></i>Account</a>
+                <a href="#"><i class="fa-solid fa-heart"></i>Wishlist</a>
+            </div> -->
+        </div>
+    </ul>
+    </div>
+
+    <!-- <h1>User Profile</h1>
+    <p><strong>Username:</strong>
+        <%= user.username %>
+    </p>
+    <p><strong>Email:</strong>
+        <%= user.email %>
+    </p> -->
+    <div class="profile">
+        <div class="profile-img">
+            <img src="/images/pro img.png" alt="" srcset="">
+            <h3> Hi ! <%= user.username %>
+            </h3>
+            <p>Email: <%= user.email %>
+            </p>
+
+            <button><i class="fa-solid fa-right-from-bracket"></i><a href="/logout">LogOut</a></button>
+
+        </div>
+        <div class="profile-details">
+            <h2>Edit Details</h2>
+            <!-- <h4>Mobile-Number*</h4> -->
+
+            <input type="text" name="full-name" placeholder="Full Name">
+            
+            <input type="number" name="mo_num" id="" placeholder="Mobile-Number">
+
+             <input type="text" name="address" placeholder="Enter address">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footerCnt">
+            <div class="socialicon">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-google"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+            </div>
+
+
+            <div class="footerNav">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">Our Team</a></li>
+                    <li><a href="">Term and Policy</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footerBottom">
+            <p>Copyright &copy; 2024; </p>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

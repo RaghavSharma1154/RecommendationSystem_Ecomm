@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/styles/purchase.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase <%= product.name %>
+    </title>
+    <link rel="icon" href="/path/to/favicon.ico" sizes="64x64" type="image/x-icon">
+    <script src="https://pay.google.com/gp/p/js/pay.js" async></script>
+    <script>
+        function onGooglePayLoaded() {
+            const paymentsClient = new google.payments.api.PaymentsClient({ environment: 'TEST' });
+            const button = paymentsClient.createButton({
+                onClick: onGooglePayButtonClicked,
+                buttonColor: 'default',
+                buttonType: 'short',
+                buttonSizeMode: 'static',
+                buttonLocale: 'en_US',
+                merchantInfo: {
+                    merchantId: 'YOUR_MERCHANT_ID', // Replace with your actual merchant ID
+                    merchantName: 'Example Merchant'
+                },
+                allowedPaymentMethods: [{
+                    type: 'CARD',
+                    parameters: {
+                        allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+                        allowedCardNetworks: ['AMEX', 'DISCOVER', 'JCB', 'MASTERCARD', 'VISA']
+                    },
+                    tokenizationSpecification: {
+                        type: 'PAYMENT_GATEWAY',
+                        parameters: {
+                            gateway: 'example',
+                            gatewayMerchantId: 'exampleMerchantId'
+                        }
+                    }
+                }]
+            });
+            document.getElementById('gpay-button-container').appendChild(button);
+        }
+
+        function onGooglePayButtonClicked() {
+            alert('iss number par gpay kare');
+        }
+
+        // Load Google Pay API
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.google && window.google.payments) {
+                onGooglePayLoaded();
+            } else {
+                document.querySelector('script[src="https://pay.google.com/gp/p/js/pay.js"]').addEventListener('load', onGooglePayLoaded);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Purchase <%= product.name %>
+            </h1>
+        </div>
+        <div class="content">
+            <img src="<%= product.url %>" alt="<%= product.name %>">
+            <p>Price: $<%= product.price %>
+            </p>
+            <div class="payment">
+                <div id="gpay-button-container"></div> <!-- This is where the Google Pay button will be appended -->
+                <div id="num">
+                    <%= product.mobilenum %>
+                </div>
+            </div>
+            <form action="/complete-purchase" method="POST">
+                <input type="hidden" name="productId" value="<%= product.id %>">
+                <button type="submit">Confirm Purchase</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

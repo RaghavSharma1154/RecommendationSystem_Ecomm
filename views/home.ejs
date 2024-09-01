@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <link href="/styles/home.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/299785c8fd.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+   
+    <div class="nav">
+        <div class="logo">
+            <img src="/images/logo1.jpg" alt="logo" srcset="" class="logo2">
+        </div>
+
+        <form action="/search" method="POST" class="search-box">
+            <input type="text" name="query" placeholder="Search products...">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <ul>
+            <!-- Cart -->
+            <i class="fa-solid fa-cart-shopping"></i>
+            <li><a href="/cart">Cart</a></li>
+            <i class="fa-solid fa-shop"></i>
+
+            <!-- Become a seller -->
+            <li><a href="/add-products">Become a Seller</a></li>
+        </ul>
+
+        <!-- Dropdowm Content -->
+        <div class="dropdown">
+            <button class="dropdown-btn"><a href="/login-signup">Login</a> <i class="fa-solid fa-caret-down"></i></button>
+            <span></span>
+            <div class="dropdown-content">
+                <div class="sign-in">
+                    <p>Already Logged In</p> <button><a href="/logout">LogOut</a></button>
+                </div>
+                <hr>
+                <a href="/account"><i class="fa-regular fa-user"></i>Account</a>
+                <a href="#"><i class="fa-solid fa-heart"></i>Wishlist</a>
+            </div>
+        </div>
+    </div>
+    <!-- Category -->
+    <section id="Category">
+        <ul>
+            <li><a href="/Mens">Mens</a></li>
+            <li><a href="/Womens">Womens</a></li>
+            <li><a href="/kids">Kids</a></li>
+            <li><a href="/Bags_Footwear">Bags&Footwear</a></li>
+            <li><a href="/Grocery">Grocerry</a></li>
+            <li><a href="/Electronics">Electronics</a></li>
+            <li><a href="/Jwellery">Jewellery & Accessories</a></li>
+            <li><a href="/Beauty">Beauty & Health</a></li>
+
+        </ul>
+    </section>
+
+    <div class="container">
+        <div class="products-container">
+            <% products.forEach(product=> { %>
+                <div class="card" data-name="p-1">
+                    <div class="product-images">
+                        <img src="<%= product.url %>" alt="
+            <%= product.name %>">
+                    </div>
+                    <div class="product-details">
+                        <h2>
+                            <%= product.name %>
+                        </h2>
+                        <p>Price: &#8377;
+                            <%= product.price %>
+                        </p>
+                        <p>Organization:
+                            <%= product.proorg %>
+                        </p>
+                    </div>
+                    <!-- <button id="product-btn"><a href="/view-product/<%= product._id %>">view more</a></button> -->
+                    <a href="/view-product/<%= product._id %>">view more</a>
+                </div>
+                <% }); %>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

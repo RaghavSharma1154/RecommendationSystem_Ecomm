@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link rel="stylesheet" href="/styles/cart.css">
+  <script src="https://kit.fontawesome.com/299785c8fd.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <div class="nav">
+    <div class="logo">
+      <a href="/"><img src="/images/logo1.jpg" alt="logo" srcset="" class="logo2"></a>
+    </div>
+    <ul>
+      <!-- Cart -->
+      <i class="fa-solid fa-cart-shopping"></i>
+      <li><a href="/cart">Cart</a></li>
+      <i class="fa-solid fa-shop"></i>
+
+      <!-- Become a seller -->
+      <li><a href="/add-products">Become a Seller</a></li>
+    
+
+    <!-- Dropdowm Content -->
+    <div class="dropdown">
+     <li> <button class="dropdown-btn"><a href="/login-signup">Login </a></button></li>
+    </div>
+  </ul>
+  </div>
+
+
+  <!-- Cart Item -->
+ <!-- Cart Item -->
+ <div class="container">
+  <h1>Your Cart</h1>
+
+  <% if (cart && cart.products.length > 0) { %>
+      <ul>
+          <% cart.products.forEach(product => { %>
+              <li id="cartli">
+                  <img src="<%= product.productUrl %>" alt="<%= product.productName %>" width="100">
+                  <div class="product-details">
+                      <h2><%= product.productName %></h2>
+                      <p>Price: &#8377; <%= product.productPrice %></p>
+                      <p>Quantity: <%= product.quantity %></p>
+                  </div>
+                  <form action="/remove-item" method="POST" class="remove-form">
+                      <input type="hidden" name="productId" value="<%= product.productId %>">
+                      <button type="submit" class="remove-button">Remove Item</button>
+                  </form>
+              </li>
+          <% }); %>
+      </ul>
+  <% } else { %>
+      <p>Your cart is empty.</p>
+  <% } %>
+</div>
+</body>
+
+</html>

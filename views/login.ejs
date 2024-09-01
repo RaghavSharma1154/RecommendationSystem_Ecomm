@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="signin-signup">
+            <form action="/login" method="POST" class="sign-in-form"> <!-- Specify action for login form -->
+                <h2 class="tittle">Sign In</h2>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="uname" placeholder="username"> <!-- Add name attribute for username -->
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="pass" placeholder="password"> <!-- Add name attribute for password -->
+                </div>
+                <br>
+                <input type="submit" value="Log In" class="btn">
+                <p class="social-text">Or Sign In with social platform</p>
+                <div class="social-media">
+                    <a href="" class="social-icon">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fa-brands fa-google"></i>
+                    </a>
+                </div>
+                <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a>
+                </p>
+            </form>
+
+            <form action="/sign-up" method="POST" class="sign-up-form"> <!-- Specify action for signup form -->
+                <h2 class="tittle">Sign up</h2>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="uname" placeholder="username"> <!-- Add name attribute for username -->
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" name="email" placeholder="email"> <!-- Add name attribute for email -->
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="pass" placeholder="password"> <!-- Add name attribute for password -->
+                </div>
+                <br>
+                <input type="submit" value="Sign Up" class="btn">
+                <p class="social-text">Or Sign In with social platform</p>
+                <div class="social-media">
+                    <a href="" class="social-icon">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fa-brands fa-google"></i>
+                    </a>
+                </div>
+                <p class="account-text">Already have an account? <a href="" id="sign-in-btn2">Sign in</a>
+                </p>
+            </form>
+
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>WELCOME BACK!</h3>
+                    <p>Get ready to rediscover your favorite products and explore exciting new arrivals.Enjoy your next purchase.Happy Shopping!!</p>
+                    <button class="btn" id="sign-in-btn">Sign In</button>
+                </div>
+                <img src="images/shop1.png" alt="" class="image">
+            </div>
+
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>New In Website?</h3>
+                    <p>Explore top-quality fashion and lifestyle products including cloths,bags,shoes and many more guaranteed to captivate and elevate your style.</p>
+                    <button class="btn" id="sign-up-btn">Sign Up</button>
+                </div>
+                <img src="images/web1.png" alt="" class="image">
+            </div>
+        </div>
+    </div>
+    <script src="frontendjs/login.js"></script>
+</body>
+
+</html>
